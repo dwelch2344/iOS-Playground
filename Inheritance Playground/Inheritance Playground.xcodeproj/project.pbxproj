@@ -27,6 +27,8 @@
 		550F5F3917BF3B7200767A56 /* DTWBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 550F5F3817BF3B7200767A56 /* DTWBaseObject.m */; };
 		550F5F3C17BF3DFF00767A56 /* TPCSomeThirdPartyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 550F5F3B17BF3DFF00767A56 /* TPCSomeThirdPartyObject.m */; };
 		550F5F3F17BF3F4C00767A56 /* DTWCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 550F5F3E17BF3F4C00767A56 /* DTWCar.m */; };
+		550F5F4517BF826800767A56 /* DTWPersonService.m in Sources */ = {isa = PBXBuildFile; fileRef = 550F5F4417BF826800767A56 /* DTWPersonService.m */; };
+		550F5F4B17BF835700767A56 /* DTWPersonInMemoryRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 550F5F4A17BF835700767A56 /* DTWPersonInMemoryRepository.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,12 @@
 		550F5F3B17BF3DFF00767A56 /* TPCSomeThirdPartyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPCSomeThirdPartyObject.m; path = classes/TPCSomeThirdPartyObject.m; sourceTree = "<group>"; };
 		550F5F3D17BF3F4C00767A56 /* DTWCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTWCar.h; path = classes/DTWCar.h; sourceTree = "<group>"; };
 		550F5F3E17BF3F4C00767A56 /* DTWCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTWCar.m; path = classes/DTWCar.m; sourceTree = "<group>"; };
+		550F5F4317BF826800767A56 /* DTWPersonService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTWPersonService.h; path = classes/DTWPersonService.h; sourceTree = "<group>"; };
+		550F5F4417BF826800767A56 /* DTWPersonService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTWPersonService.m; path = classes/DTWPersonService.m; sourceTree = "<group>"; };
+		550F5F4617BF82A400767A56 /* DTWPersonCrudRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DTWPersonCrudRepository.h; path = classes/DTWPersonCrudRepository.h; sourceTree = "<group>"; };
+		550F5F4917BF835700767A56 /* DTWPersonInMemoryRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTWPersonInMemoryRepository.h; path = classes/DTWPersonInMemoryRepository.h; sourceTree = "<group>"; };
+		550F5F4A17BF835700767A56 /* DTWPersonInMemoryRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTWPersonInMemoryRepository.m; path = classes/DTWPersonInMemoryRepository.m; sourceTree = "<group>"; };
+		550F5F4D17BF8C5100767A56 /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Global.h; path = classes/Global.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,22 +138,16 @@
 		550F5EFE17BF2E5200767A56 /* Inheritance Playground */ = {
 			isa = PBXGroup;
 			children = (
-				550F5F4017BF7FD200767A56 /* InheritenceClasses */,
+				550F5F4C17BF8C3600767A56 /* Util */,
+				550F5F4017BF7FD200767A56 /* Models */,
+				550F5F4217BF81D800767A56 /* Service */,
+				550F5F4817BF82E400767A56 /* Repo */,
 				550F5F0717BF2E5200767A56 /* DTWAppDelegate.h */,
 				550F5F0817BF2E5200767A56 /* DTWAppDelegate.m */,
-				550F5F3D17BF3F4C00767A56 /* DTWCar.h */,
-				550F5F3E17BF3F4C00767A56 /* DTWCar.m */,
-				550F5F3A17BF3DFF00767A56 /* TPCSomeThirdPartyObject.h */,
-				550F5F3B17BF3DFF00767A56 /* TPCSomeThirdPartyObject.m */,
 				550F5F1017BF2E5200767A56 /* MainStoryboard.storyboard */,
 				550F5F1317BF2E5200767A56 /* DTWViewController.h */,
 				550F5F1417BF2E5200767A56 /* DTWViewController.m */,
 				550F5EFF17BF2E5200767A56 /* Supporting Files */,
-				550F5F3317BF2E9400767A56 /* DTWVersionable.h */,
-				550F5F3417BF2F3D00767A56 /* DTWPerson.h */,
-				550F5F3517BF2F3D00767A56 /* DTWPerson.m */,
-				550F5F3717BF3B7200767A56 /* DTWBaseObject.h */,
-				550F5F3817BF3B7200767A56 /* DTWBaseObject.m */,
 			);
 			path = "Inheritance Playground";
 			sourceTree = "<group>";
@@ -183,11 +185,47 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		550F5F4017BF7FD200767A56 /* InheritenceClasses */ = {
+		550F5F4017BF7FD200767A56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				550F5F3D17BF3F4C00767A56 /* DTWCar.h */,
+				550F5F3E17BF3F4C00767A56 /* DTWCar.m */,
+				550F5F3A17BF3DFF00767A56 /* TPCSomeThirdPartyObject.h */,
+				550F5F3B17BF3DFF00767A56 /* TPCSomeThirdPartyObject.m */,
+				550F5F3417BF2F3D00767A56 /* DTWPerson.h */,
+				550F5F3517BF2F3D00767A56 /* DTWPerson.m */,
+				550F5F3717BF3B7200767A56 /* DTWBaseObject.h */,
+				550F5F3817BF3B7200767A56 /* DTWBaseObject.m */,
 			);
-			name = InheritenceClasses;
+			name = Models;
+			sourceTree = "<group>";
+		};
+		550F5F4217BF81D800767A56 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				550F5F4317BF826800767A56 /* DTWPersonService.h */,
+				550F5F4417BF826800767A56 /* DTWPersonService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		550F5F4817BF82E400767A56 /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				550F5F3317BF2E9400767A56 /* DTWVersionable.h */,
+				550F5F4617BF82A400767A56 /* DTWPersonCrudRepository.h */,
+				550F5F4917BF835700767A56 /* DTWPersonInMemoryRepository.h */,
+				550F5F4A17BF835700767A56 /* DTWPersonInMemoryRepository.m */,
+			);
+			name = Repo;
+			sourceTree = "<group>";
+		};
+		550F5F4C17BF8C3600767A56 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				550F5F4D17BF8C5100767A56 /* Global.h */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +346,8 @@
 				550F5F3917BF3B7200767A56 /* DTWBaseObject.m in Sources */,
 				550F5F3C17BF3DFF00767A56 /* TPCSomeThirdPartyObject.m in Sources */,
 				550F5F3F17BF3F4C00767A56 /* DTWCar.m in Sources */,
+				550F5F4517BF826800767A56 /* DTWPersonService.m in Sources */,
+				550F5F4B17BF835700767A56 /* DTWPersonInMemoryRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +528,7 @@
 				550F5F2F17BF2E5200767A56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		550F5F3017BF2E5200767A56 /* Build configuration list for PBXNativeTarget "Inheritance PlaygroundTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +537,7 @@
 				550F5F3217BF2E5200767A56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

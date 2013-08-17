@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 David Welch. All rights reserved.
 //
 
+#import "Global.h"
+
 #import "DTWAppDelegate.h"
 #import "DTWVersionable.h"
 #import "DTWCar.h"
@@ -13,23 +15,32 @@
 #import "TPCSomeThirdPartyObject.h"
 
 
+#import "DTWPersonService.h"
+#import "DTWPersonInMemoryRepository.h"
+
+
 @implementation DTWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-    NSLog(@"Hello world!");
+    ALog(@"Hello world!");
     
+    // Create our models and show their different impl's of modifiedOn
     id<DTWVersionable> car = [[DTWCar alloc] init];
-    NSLog(@"%@ (Base Class) ", [[car modifiedOn] description]);
+    ALog(@"%@ (Base Class) ", [[car modifiedOn] description]);
     
     id<DTWVersionable> person = [[DTWPerson alloc] init];
-    NSLog(@"%@ (Overridden) ", [[person modifiedOn] description]);
+    ALog(@"%@ (Overridden) ", [[person modifiedOn] description]);
     
     id<DTWVersionable> tpc = [[TPCSomeThirdPartyObject alloc] init];
-    NSLog(@"%@ (Different base class)", [[tpc modifiedOn] description]);
+    ALog(@"%@ (Different base class)", [[tpc modifiedOn] description]);
 
     
+
+    id<DTWPersonCrudRepository> repo = [[DTWPersonInMemoryRepository alloc] init];
+    DTWPersonService* service = [[DTWPersonService alloc] initWithRepository:repo];
+    [service testMethodWithPerson:person];
     
     return YES;
 }
